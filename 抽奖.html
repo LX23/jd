@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        .css_btn{margin-top:-160px;}
+        a{text-decoration: none;color:#000;display:block;line-height:58px;}
+        a button{padding:20px;margin-top: 5px;}
+        .box{margin:0 auto;width:450px;padding-top:50px;text-align: center;}
+        .text{margin:0 auto;width:300px;margin-top:50px;}
+        .text h1{color: red;}
+        .text h3{font-weight: normal;color:#000;margin-top:15px;}
+        .text h3 span{color:red;}
+        .text h3 i{color:red;}
+        .text h5{margin-top:20px;font-weight: normal;color:#000;}
+    </style>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script>
+        window.onload=function(){
+            $(function(){
+                //找到图1  图2
+                var bg1=$("#bg1");
+                var bg2=$("#bg2");
+                //读取图1的宽 高
+                var wt=bg1.width();
+                var ht=bg1.height();
+                //读取图2的宽 高
+                var wp=bg2.width();
+                var hp=bg2.height();
+                //bg1.offset({left:100,top:100});
+                var jf=parseInt(Math.random()*(6000-3000)+3000);//随机显示积分
+                var span=$("span");
+                span.html(jf);
+                //将图2放到图1的中间-----------------------------------------------------
+                bg2.offset({left:(wt-wp)/2+bg1.offset().left,top:(ht-hp)/2+bg1.offset().top});
+                var deg=0;
+                var timer='';
+                var tf=false;
+
+                $("i").html(span.html());
+                //点击进行抽奖-------------------------------------------------
+                $(bg2).click(function(){
+                    tf=!tf;
+                    if(tf && jf>=500){
+                        jf-=500;
+                        $("i").html(jf);
+                        timer=setInterval(function(){//设置定时器
+                            deg+=30;
+                            bg1.css("transform","rotate("+deg+"deg)");
+                        },20)
+                    }else if(jf<500){
+                        clearInterval(timer);//清楚定时器
+                        alert("积分不足请及时充值，或者购买商品获得积分")
+                    }
+                    else{
+                        clearInterval(timer);//清楚定时器
+                    }
+
+
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+<div class="text">
+    <h1>积 分 抽 奖 活 动</h1><h3>当前积分：<span></span><br>剩余积分：<i></i></h3><h5>抽奖规则：500积分/次</h5>
+</div>
+<div class="box">
+    <img id="bg1" src="images/turntable.png"><img id="bg2" src="images/pointer.png">
+    <div class="css_btn">
+        <a href="京东详情页.html"><button type="button">返回京东详情页</button></a>
+        <a href="index.html"><button type="button">返回首页</button></a>
+    </div>
+</div>
+</body>
+</html>

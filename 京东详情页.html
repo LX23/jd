@@ -1,0 +1,496 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>【帮宝适纸尿裤】帮宝适 Pampers</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/head.css" rel="stylesheet" type="text/css">
+<link href="css/xiangqingye.css" rel="stylesheet" type="text/css">
+<script src="js/详情_基础运动.js"></script>
+<script src="js/详情_图片左右切换.js"></script>
+<script src="js/详情_选项卡.js"></script>
+<script src="js/放大.js"></script>
+<script src="js/jquery-3.1.0.js"></script>
+
+<script>
+window.onload=function(){
+//-------------------------------------------------------------------
+	//轮播图
+	var marin_left=document.getElementsByClassName("marin-left")[0];
+    var numb=marin_left.getElementsByTagName('ol')[0].children;
+    var oul=marin_left.getElementsByTagName('ul')[0];
+    var li=oul.children;
+	hxsd_lunbo(marin_left,numb,oul,li);
+	
+//-------------------------------------------------------------------
+	//切换样式
+	var size=document.getElementsByClassName("size")[0];
+	var dd=size.getElementsByTagName('dd');
+	var ab=size.getElementsByTagName('a');
+	var ib=size.getElementsByTagName('i');
+	
+	for(var i=0;i<dd.length;i++){
+		dd[i].index=i;
+		dd[i].onclick=function(){
+			for(var j=0;j<dd.length;j++){
+				ab[j].className="";
+				ib[j].className="";
+			};
+			ib[this.index].className="gou";
+			ab[this.index].className="hov";
+		};
+	};
+	
+//-------------------------------------------------------------------	
+	//选项卡
+	run('ka');
+//-------------------------------------------------------------------------------
+	//放大镜
+	var left_box=document.getElementById("left_box");
+	var right_box=document.getElementById("right_box");
+	var bigpic=document.getElementById("bigpic");
+	var ospan=left_box.getElementsByTagName("span")[0];
+		hxsd_fd(left_box,right_box,bigpic,ospan)
+	
+//-------------------------------------------------------------------------------	
+//	数量加减
+	var kuang=document.getElementsByClassName("kuang")[0];
+	var numb1=kuang.getElementsByClassName("numb1")[0];
+	var numb2=kuang.getElementsByClassName("numb2")[0];
+	var input=kuang.getElementsByTagName("input")[0];
+	var n=1;
+		numb2.onclick=function(){
+			if(n<200){
+				input.value=++n;
+			};
+		};
+		numb1.onclick=function(){
+			if(n>1){
+				input.value=--n;
+			};
+		};
+
+
+    //字体变大变小----------------------------------------------------------------------------------------
+    $(function(){
+        var size=16;
+        var max=35;
+        var min=10;
+        $(".jquery_btn:eq(0)").click(function(){
+            size+=5;
+            if(size>max){
+                size=max;
+            }else if(size<min){
+                size=min;
+            }
+            $(".tuijian a").css("font-size",size+"px")
+        });
+        $(".jquery_btn:eq(2)").click(function(){
+            size-=5;
+            if(size>max){
+                size=max;
+            }else if(size<min){
+                size=min;
+            }
+            $(".tuijian a").css("font-size",size+"px")
+        });
+        $(".jquery_btn:eq(1)").click(function(){
+            size=12;
+            $(".tuijian a").css("font-size",size+"px")
+        });
+    })
+}
+</script>
+</head>
+
+<body>
+<div class="warp">
+<div class="top">
+    <div class="inner">
+     	<div class="address">送至：北京<span class="biao"><i>◇</i></span>
+        </div>
+        <ul>
+        	<li><a href="#">13552845677</a>  <a href="#">退出</a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">我的订单</a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">我的京东<span class="biao"><i>◇</i></span></a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">京东会员</a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">企业采购</a></li>
+            <li class="spilt">|</li>
+            <li class="mobile"><a href="#">手机京东<span class="biao"><i>◇</i></span></a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">关注京东<span class="biao"><i>◇</i></span></a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">客户服务<span class="biao"><i>◇</i></span></a></li>
+            <li class="spilt">|</li>
+            <li><a href="#">网站导航<span class="biao"><i>◇</i></span></a></li>
+        </ul>   
+    </div>
+</div>
+<div class="banner">
+	<div class="inner"></div>
+</div>
+<div class="header">
+	<div class="inner">
+    	<div class="header-top clearfix">
+        	<div class="logo"><a href="index.html"><img src="images/logo-201305.png"/></a></div>
+            <div class="serch">
+            <form>
+            <input class="text" type="text" placeholder="闪电特卖"><input class="but" type="button" value="搜索">
+            </form>
+            </div>
+            <div class="buycar">
+            <div class="sanjiao"></div>
+            	<a href="#">我的购物车</a>
+                <span>0</span>
+            </div>
+            <ul>
+            <li class="red"><a href="#">玩转3C</a></li>
+            <li><a href="#">平板99秒</a></li>
+            <li><a href="#">1分钱抢</a></li>
+            <li><a href="#">荣耀V8</a></li>
+            <li><a href="#">直降618元</a></li>
+            <li><a href="#">六一儿童节</a></li>
+            <li><a href="#">吉利</a></li>
+            <li><a href="#">免费试用</a></li>
+            <li><a href="#">围城</a></li>
+            </ul>
+
+        </div>
+    <div class="header-bot">
+    	<div class="menu">全部商品分类</div>
+        <ul>
+            <li><a href="#">服装城</a></li>
+            <li><a href="#">美妆馆</a></li>
+            <li><a href="#">超市</a></li>
+            <li><a href="#">生鲜</a></li>
+            <li><a href="#">全球购</a></li>
+            <li><a href="#">闪购</a></li>
+            <li><a href="#">团购</a></li>
+            <li><a href="#">拍卖</a></li>
+            <li><a href="#">金融</a></li>
+            
+        </ul>
+        <div class="pic"><img src="images/首页_03.jpg"/></div>
+    </div>
+    </div>
+</div>
+
+<div class="main1">
+<div class="inner">
+	<dl class="muying clearfix">
+    	<dt><a href="#">母婴</a></dt>
+        <dd><span>></span></dd>
+        <dd><a href="#">尿裤湿巾</a></dd>
+        <dd><span>></span></dd>
+        <dd><a href="#">婴儿尿裤</a></dd>
+        <dd><span>></span></dd>
+        <dd><a href="#">帮宝适（Pampers）</a></dd>
+        <dd><span>></span></dd>
+        <dd><a href="#">帮宝适纸尿裤</a></dd>
+    </dl>
+    
+<div class="main1-bot">
+	<div id="main_js" class="marin-left">
+    	<div class="box">
+            <ol>
+                <li class="ac"><img src="images/hxsd_x11.jpg"></li>
+                <li><img src="images/hxsd_x22.jpg"></li>
+                <li><img src="images/hxsd_x33.jpg"></li>
+                <li><img src="images/hxsd_x44.jpg"></li>
+                <li><img src="images/hxsd_x55.jpg"></li>
+            </ol>
+            
+            
+            <ul>
+                <li id="left_box"><img src="images/hxsd_x1.jpg"><span></span></li>
+                <li><img src="images/hxsd_x2.jpg"><span></span></li>
+                <li><img src="images/hxsd_x3.jpg"><span></span></li>
+                <li><img src="images/hxsd_x4.jpg"><span></span></li>
+                <li><img src="images/hxsd_x5.jpg"><span></span></li>
+            </ul>
+            
+            
+      <div id="right_box"><img id="bigpic" src="images/hxsd_x1.jpg"></div>
+      <!--<div><img src="images/hxsd_x2.jpg"></div>
+      <div><img src="images/hxsd_x3.jpg"></div>
+      <div><img src="images/hxsd_x4.jpg"></div>
+      <div><img src="images/hxsd_x5.jpg"></div>-->
+            
+            
+        </div>
+        <div class="main1_txt"><span>商品编号：</span><span>695469</span><a href="#"><i><img src="images/hxsd_fenxaing_06.jpg"></i>关注商品</a><a href="#"><i><img src="images/hxsd_fenxaing_03.jpg"></i>分享</a>
+    </div>
+</div>
+
+
+
+	<div class="marin-center">
+    	<div class="title">
+            <h2>【京东超市】帮宝适 Pampers 超薄干爽 婴儿纸尿裤 加大号XL128片【12-17kg】</h2>
+            <p>神奇锁水珠珠，干爽锁住尿湿，让宝宝安睡一整晚！</p>
+        </div>
+    	<div class="price clearfix">
+        	<p>京 东 价：<span>￥199.00</span> (降价通知)</p>
+            <div class="pingjia"><p>累计评价</p><a href="#">1675967</a></div>
+        </div>
+    	<div class="address clearfix">
+        	<p>配 送 至：</p>
+            <div class="xiala"><p>北京朝阳区三环以内</p><span></span></div>
+        	<!--<select>
+            	<option value="北京">北京</option>
+                <option value="北京">北京</option>
+                <option value="北京">北京</option>
+                <option value="北京">北京</option>
+                <option value="北京">北京</option>
+            </select>-->
+            <p><span>有货</span>，支持 <a href="#">99元免运费</a>  |  <a href="#">货到付款</a></p>
+        </div>
+        <div class="fuwu clearfix"><p>服 　务：</p><span>由 京东 发货，<a href="#">Pampers京东自营旗舰店 </a> 提供售后服务。23:00前完成下单,预计明天(07月09日)送达</span></div>
+        
+        <div class="size clearfix">
+        	<dl>
+                <dt>选择尺码：</dt>
+                <dd><a class="hov" href="javascript:;">绿帮加大号XL128片</a><i class="gou ac"></i></dd>
+                <dd><a href="javascript:;">绿帮大号L164片</a><i></i></dd>
+                <dd><a href="javascript:;">绿帮中号M192片</a><i></i></dd>
+                <dd><a href="javascript:;">绿帮小号S164片</a><i></i></dd>
+                <dd><a href="javascript:;">绿帮新生儿NB96片</a><i></i></dd>
+                <dd><a href="javascript:;">干爽拉拉裤加加大码XXL50片</a><i></i></dd>
+                <dd><a href="javascript:;">干爽拉拉裤加大码XL72片</a><i></i></dd>
+                <dd><a href="javascript:;">干爽拉拉裤大码L84片</a><i></i></dd>
+                <dd><a href="javascript:;">干爽拉拉裤中码M94片</a><i></i></dd>
+        	</dl>
+        </div>
+        
+        <div class="fenqi clearfix">
+        	<dl>
+            	<dt>白条分期：</dt>
+            	<dd>30天免息</dd>
+            	<dd>￥67.33×3期</dd>
+                <dd>￥34.16×6期</dd>
+                <dd>￥17.58×12期</dd>
+                <dd>￥9.29×24期</dd>
+            </dl>
+        </div>
+        <div class="hui clearfix"></div>
+        <div class="wen clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="buycar clearfix">
+        	<div class="kuang">
+                <button class="numb1" type="button">-</button>
+                <button class="numb2" type="button">+</button>
+                <input type="text" value="1">
+            </div>
+            
+        	<div class="jiaru"><a href="购物清单.html"></a></div>
+        	
+        </div>
+        	<p class="tishi">温馨提示：本商品不能使用 东券支持7天无理由退货</p>
+        
+        
+    </div>
+    
+	<div class="marin-right">
+    	<div class="logo"><img src="images/hxsd_1111.jpg"></div>
+    	<div class="dian">Pampers京东自营旗…<span>京东自营</span></div>
+    	<ul>
+        	<li class="li1"><a href="#"><i></i>留言咨询</a></li>
+            <li class="li2"><a href="#"><i></i>咨询JIMI</a></li>
+            <li class="li3"><a href="#"><i></i>进店逛逛</a></li>
+            <li class="li4"><a href="#"><i></i>关注店铺</a></li>
+        </ul>
+        <dl class="clearfix">
+        	<dt>服务支持：</dt>
+            <dd><i><img src="images/hxsd_ye.png"></i>夜间配</dd>
+            <dd><i><img src="images/hxsd_ye1.png"></i>自提</dd>
+        </dl>
+   </div>
+</div>
+</div>
+</div>
+
+<div class="main2">
+<div id="ka" class="inner">
+
+	<ul class="tit clearfix">
+    	<li><a class="ac" href="javascript:;">推荐配件</a></li>
+        <li><a href="javascript:;">人气单品</a></li>
+    </ul>
+
+
+
+
+
+    <button class="jquery_btn" type="button">加</button>
+    <button class="jquery_btn" type="button">还原</button>
+    <button class="jquery_btn" type="button">减</button>
+
+
+	<ul class="ac tuijian clearfix">
+    	<li><a href="#"><img src="images/hxsd_01.jpg"><p>【京东超市】帮宝适 Pampers 超薄干爽 婴儿拉<span>￥76.00</span></p></a></li>
+    	<li><a href="#"><img src="images/hxsd_02.jpg"><p>【京东超市】帮宝适 Pampers 超薄干爽 婴儿纸<span>￥199.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_03.jpg"><p>【京东超市】帮宝适 Pampers 超薄干爽 婴儿纸<span>￥129.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_04.jpg"><p>【京东超市】妈咪宝贝 MamyPoko 均吸干爽纸<span>￥39.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_05.jpg"><p>雀氏纸尿裤柔薄乐动尿不湿XL112男女通用（1<span>￥159.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_06.jpg"><p>帮宝适 Pampers 超薄干爽 婴儿纸尿裤 加大号XL<span>￥99.00</span></p></a></li>
+    </ul>
+
+
+
+    <ul class="tuijian clearfix">
+    	<li><a href="#"><img src="images/hxsd_02.jpg"><p>【京东超市】帮宝适 Pampers 超薄干爽 婴儿纸<span>￥199.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_01.jpg"><p>【京东超市】帮宝适 Pampers 超薄干爽 婴儿拉<span>￥76.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_04.jpg"><p>【京东超市】妈咪宝贝 MamyPoko 均吸干爽纸<span>￥39.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_03.jpg"><p>【京东超市】帮宝适 Pampers 超薄干爽 婴儿纸<span>￥129.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_05.jpg"><p>雀氏纸尿裤柔薄乐动尿不湿XL112男女通用（1<span>￥159.00</span></p></a></li>
+        <li><a href="#"><img src="images/hxsd_06.jpg"><p>帮宝适 Pampers 超薄干爽 婴儿纸尿裤 加大号XL<span>￥99.00</span></p></a></li>
+    </ul>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="footer">
+<div class="inner">
+	<div class="top clearfix">
+    	<ul>
+        <li><a href="#"><i><img src="images/dkhs_59.jpg"></i><p>多品类齐全 轻松购物</p></a></li>
+        <li><a href="#"><i><img src="images/dkhs_61.jpg"></i><p>快多仓直发 极速配送</p></a></li>
+        <li><a href="#"><i><img src="images/dkhs_63.jpg"></i><p>好正品行货 精致服务</p></a></li>
+        <li><a href="#"><i><img src="images/dkhs_65.jpg"></i><p>省天天低价 畅选无忧</p></a></li>
+        <div class="clearfix"></div>
+        </ul>
+    </div>
+    
+	<div class="bot clearfix">
+    	<dl>
+        <dt>购物指南</dt>
+        	<dd>购物流程</dd>
+            <dd>会员介绍</dd>
+            <dd>生活旅行/团购</dd>
+            <dd>常见问题</dd>
+            <dd>大家电</dd>
+            <dd>联系客服</dd>
+        </dl>
+        
+        <dl>
+        <dt>配送方式</dt>
+        	<dd>上门自提</dd>
+            <dd>211限时达</dd>
+            <dd>配送服务查询</dd>
+            <dd>配送费收取标准</dd>
+            <dd>海外配送</dd>
+        </dl>
+        <dl>
+        <dt>支付方式</dt>
+        	<dd>货到付款</dd>
+            <dd>在线支付</dd>
+            <dd>分期付款</dd>
+            <dd>邮局汇款</dd>
+            <dd>公司转账</dd>
+        </dl>
+        <dl>
+        <dt>售后服务</dt>
+        	<dd>售后政策</dd>
+            <dd>价格保护</dd>
+            <dd>退款说明</dd>
+            <dd>返修/退换货</dd>
+            <dd>取消订单</dd>
+        </dl>
+        <dl class="dl5">
+        <dt>特色服务</dt>
+        	<dd>夺宝岛</dd>
+            <dd>DIY装机</dd>
+            <dd>延保服务</dd>
+            <dd>京东E卡</dd>
+            <dd>京东通信</dd>
+            <dd>京东JD+</dd>
+        </dl>
+        <div class="map">
+        <div class="bg">
+        	<h2>京东自营覆盖区县</h2>
+            <p>京东已向全国2630个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+            <span>查看详情 ></span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="bottom">
+<div class="inner">
+	<div class="daohang">
+    	<ul>
+        <li><a href="#">关于我们</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">联系我们</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">商家入驻</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">营销中心</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">手机京东</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">友情链接</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">销售联盟</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">京东社区</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">京东公益</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">English Site</a></li>
+        <li class="spilt">|</li>
+        <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+	<p><span></span>京公网安备 11000002000088号  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-经营性-2014-0008  |  新出发京零 字第大120007号</p>
+	<p>互联网出版许可证编号新出网证(京)字150号  |  出版物经营许可证  |  网络文化经营许可证京网文[2014]2148-348号  |  违法和不良信息举报电话：4006561155</p>
+	<p>Copyright ? 2004 - 2016  京东JD.com 版权所有  |  消费者维权热线：4006067733</p>
+    <span>京东旗下网站：京东钱包</span>
+    <ul class="other">
+    	<li><a href="#"><i><img src="images/footer11_03.jpg"></i><p>经营性网站备案信息</p></a></li>
+    	<li><a href="#"><i><img src="images/footer11_03.jpg"></i><p>可信网站信用评价</p></a></li>
+        <li><a href="#"><i><img src="images/footer11_03.jpg"></i><p>网络警察提醒您</p></a></li>
+        <li class="cxwz"><a href="#"><i><img src="images/footer11_03.jpg"></i><p>诚信网站</p></a></li>
+        <li><a href="#"><i><img src="images/footer11_03.jpg"></i><p>中国互联网举报中心</p></a></li>
+        <li><a href="#"><i><img src="images/footer11_03.jpg"></i><p>网络举报APP下载</p></a></li>
+    </ul>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

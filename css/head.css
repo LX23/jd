@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+.top{background:#f1f1f1;height:30px;}
+
+.top .inner .address{float:left;line-height:30px;}
+.top .inner ul{float:right;}
+.top ul li{float:left;line-height:30px;padding:0px 10px;}
+.top .inner ul .spilt{padding:0px;}
+.top .inner ul .mobile{margin-left:11px;background:url(../images/jd2015img.png) no-repeat left 5px;}
+.top .inner ul .mobile a{margin-left:5px;}
+.top .inner .biao{line-height:0px;position:relative;margin:0px 10px;}
+.top .inner .biao i{line-height:0px;font-size:20px;position:absolute;left:0px;top:58%;height:10px;overflow:hidden;margin-top:-4px;}
+
+.banner{height:120px;background:url(../images/banner_02.jpg) no-repeat center center;}
+.header{height:144px;border-bottom:2px #b1191a solid;}
+.header .inner .header-top .logo{padding:20px 0px;float:left;width:362px;}
+.header .inner .header-top .logo img{display:block;}
+.header .inner .header-top .serch{float:left;margin-top:27px;}
+.header .inner .header-top .serch .text{border:2px solid #b61d1d;height:32px;width:454px;padding-left:4px;}
+.header .inner .header-top .serch .but{height:36px;width:80px;background:#b61d1d;color:#FFFFFF;}
+.header .inner .header-top .buycar{text-align:center;float:right;width:139px;height:34px;border:1px solid #dfdfdf;background:#f9f9f9;margin-top:26px;margin-right:66px;position:relative;}
+.header .inner .header-top .buycar a{display:block;width:139px;height:34px;font:14px/34px "微软雅黑";background:url(../images/jd2015img.png) no-repeat 5px -48px;}
+.header .inner .header-top .buycar span{width:16px;height:16px;background:#c81623;position:absolute;right:19px;top:-5px;border-radius:8px 8px 0px;color:#FFFFFF;}
+
+.header .inner .header-top .buycar .sanjiao{height:9px;width:6px;background:url(../images/header-sanjiao_05.jpg) no-repeat left top;position:absolute;right:11px;top:13px;}
+.header .inner .header-top ul{float:left;margin-top:8px;}
+.header .inner .header-top ul li{float:left;margin-right:10px;}
+.header .inner .header-top ul .red a{color:#c81623;}
+
+.header .inner .header-bot .menu{padding-top:2px;float:left;width:210px;height:44px;background:#b1191a;text-align:center;font:16px/42px "微软雅黑";color:#ffffff;}
+.header .inner .header-bot ul{padding-top:2px;float:left;}
+.header .inner .header-bot ul li{float:left;padding:0px 19px;font:16px/42px "微软雅黑";}
+.header .inner .header-bot ul li a{color:#333436;}
+.header .inner .header-bot .pic{float:right;padding-right:152px;padding-top:9px;}
+
+
+
+
+
+
+
+
+.footer{margin-top:21px;color:#666668;}
+.footer .top ul{background:#f5f5f5;padding-left:15px;}
+.footer .top li{height:92px;float:left;margin-right:31px;}
+.footer .top li a{color:#333;display:inline-block;}
+.footer .top li i{display:block;float:left;margin-right:10px;width:39px;margin-top:24px;}
+.footer .top li p{float:left;font:20px/92px "微软雅黑";font-weight:400;color:#333;}
+
+.footer .bot{margin-top:16px;border-bottom:1px solid #e5e5e5;}
+.footer .bot dl{float:left;width:199px;margin-bottom:32px;}
+.footer .bot dl dt{font:16px/35px "微软雅黑";font-weight:500;}
+.footer .bot dl dd{font:12px/20px "微软雅黑";}
+.footer .bot .dl5{width:167px;}
+.footer .bot .map{width:230px;float:left;padding-left:17px;}
+.footer .bot .map .bg{width:198px;height:166px;background:url(../images/china.png) no-repeat left -132px;}
+.footer .bot .map h2{font:16px/35px "微软雅黑";font-weight:500;}
+.footer .bot .map p{font:12px/18px "微软雅黑";}
+.footer .bot .map span{font:12px/18px "微软雅黑";float:right;}
+
+
+.bottom .inner{text-align:center;padding-top:12px;color:#666668;}
+.bottom .inner .daohang li{padding:0px 11px;display:inline-block;font:12px/35px Arial,"微软雅黑";}
+.bottom .inner .daohang .spilt{padding:0px;}
+.bottom .inner p{font:12px/20px "微软雅黑";position:relative;}
+.bottom .inner p span{display:block;width:18px;height:20px;background:url(../images/jind_03.jpg) no-repeat left 0px;position:absolute;left:208px;top:1px;}
+.bottom .inner span{font:12px/12px "微软雅黑";}
+.bottom .inner .other{text-align:center;margin-top:13px;margin-bottom:32px;}
+.bottom .inner .other li{background:#eee;width:103px;display:inline-block;height:32px;margin-right:13px;text-align:left;}
+.bottom .inner .other li a{display:block;height:32px;color:#666668;}
+.bottom .inner .other i{float:left;width:32px;heigth:28px;margin-top:2px;margin-left:2px;}
+.bottom .inner .other p{float:left;font-size:12px;width:64px;line-height:12px;margin-top:4px;padding-left:5px;}
+.bottom .inner .other .cxwz p{line-height:32px;margin-top:0px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

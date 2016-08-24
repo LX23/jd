@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        a{text-decoration: none;line-height:40px;display:inline-block;color:#000;}
+        button{height:40px;padding:0 10px;}
+        .shopping{margin-top:200px;margin-left: 700px;}
+        table{text-align: center;border-spacing: 1px;border-collapse: collapse;}
+        table td{border: 1px solid #000000;padding:15px;}
+        table th{border: 1px solid #000000;padding:15px;}
+        .tab_th{background:#9d9d9d;}
+        .tab_even{background:#ccc;}
+        .tab_odd{background:#fff;}
+        .ac{color:red;}
+        .hover{background:red;}
+    </style>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script>
+        $(function(){
+            var product=[
+            {name:"小米5手机",price:1999,number:1},
+            {name:"小米蓝牙耳机",price:79,number:1},
+            {name:"小米胶囊耳机",price:69,number:1},
+            {name:"小米手环2",price:149,number:1}
+            ];
+            //创建table
+            var tab;
+            tab="<table>";
+            tab+="<tr><th>选择</th><th>商品</th><th>价格</th><th>数量</th><th>合计</th></tr>";
+            for(var i=0;i<product.length;i++){
+                tab+="<tr>"+
+                        "<td><input type='checkbox'/></td>" +
+                        "<td>"+product[i].name+"</td>" +
+                        "<td>"+product[i].price+"</td>" +
+                        "<td><input id='#jian' type='button' value='-' style='padding:5px 8px;'> "+product[i].number+"<input id='#jia' type='button' value='+' style='padding:5px 8px;'></td>" +
+                        "<td>"+product[i].price*product[i].number+"</td>"+
+                        "</tr>";
+            }
+            tab+="</table>";
+            $(".box").html(tab);
+            //设置样式
+            var table=$(".box table");
+            table.find("tr:even").attr("class","tab_even");
+            table.find("tr:odd").attr("class","tab_odd");
+            table.find("tr:first").attr("class","tab_th");
+
+
+
+
+
+
+
+            //查找含有输入的字
+            $("#btn").click(function(){
+                table.find("tr[class*='ac']").removeClass("ac");
+                var text=$("#inp").val();
+                table.find("tr:contains("+text+")").addClass("ac");
+            });
+            //合计总价
+            $("button:eq(0)").click(function(){
+                fn();
+                if($("span").html()>0){
+                    //$("button:eq(0)").html('<a href="抽奖.html" style="width:60px;">购买</a>')
+                   // $("button:eq(0) a").attr({href:"抽奖.html"});
+                    location.href="抽奖.html";
+
+                }else {
+                    alert("亲！你还没有选择商品。");
+                    return false;
+                }
+
+            });
+            $("input:checkbox").change(function(){
+                $("button:eq(0)").click();
+            });
+
+            //封装函数——计算价格
+            function fn(){
+                var tr=table.find("tr");
+                var a=0;
+                for(var i=1;i<tr.length;i++){
+                    var check=tr.eq(i).find("input:checkbox").prop("checked");
+                    if(check){
+                        a+=product[i-1].price*product[i-1].number;
+                    }
+                }
+                $("span").html(a);
+            }
+
+
+
+            $("button:eq(1)").click(function(){
+                var table_tr=table.find("tr");
+                //给表格添加一列
+                table.find("tr:eq(0)").append("<th>选择</th>");
+                table.find("tr:gt(0)").append("<td><a href='#'>删除</a></td>");
+        //将  <td><a href='#'>删除</a></td>  插入到  tr:gt(0)  里面去
+                //$("<td><a href='#'>删除</a></td>").appendTo("tr:gt(0)")
+
+
+
+                var deletes=$("tr").find("a");
+                $(deletes).click(function(){
+                    $(this).parent().parent().remove();
+                    fn();
+                })
+            });
+            $("table").find("tr").hover(function(){
+                $(this).addClass("hover");
+            },function(){
+                $(this).removeClass("hover");
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="shopping">
+    请输入：<input id="inp" type="text"/>
+    <input id="btn" type="button" value="筛选"/>
+
+    <div class="box"></div><br>
+    <button type="button" style="padding:0;width:60px;">购买</button>
+    <button type="button">编辑</button>
+    <a href="京东详情页.html"><button type="button">返回上一页</button></a>
+    <p style="font-size:26px;margin-left:60px;">订单总价：<span>0</span>元</p>
+    <br>
+
+</div>
+</body>
+</html>
