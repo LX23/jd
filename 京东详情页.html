@@ -11,16 +11,15 @@
 <script src="js/详情_选项卡.js"></script>
 <script src="js/放大.js"></script>
 <script src="js/jquery-3.1.0.js"></script>
-
 <script>
 window.onload=function(){
 //-------------------------------------------------------------------
 	//轮播图
-	var marin_left=document.getElementsByClassName("marin-left")[0];
-    var numb=marin_left.getElementsByTagName('ol')[0].children;
-    var oul=marin_left.getElementsByTagName('ul')[0];
-    var li=oul.children;
-	hxsd_lunbo(marin_left,numb,oul,li);
+//	var marin_left=document.getElementsByClassName("marin-left")[0];
+//    var numb=marin_left.getElementsByTagName('ol')[0].children;
+//    var oul=marin_left.getElementsByTagName('ul')[0];
+//    var li=oul.children;
+//	hxsd_lunbo(marin_left,numb,oul,li);
 	
 //-------------------------------------------------------------------
 	//切换样式
@@ -28,7 +27,6 @@ window.onload=function(){
 	var dd=size.getElementsByTagName('dd');
 	var ab=size.getElementsByTagName('a');
 	var ib=size.getElementsByTagName('i');
-	
 	for(var i=0;i<dd.length;i++){
 		dd[i].index=i;
 		dd[i].onclick=function(){
@@ -41,17 +39,31 @@ window.onload=function(){
 		};
 	};
 	
-//-------------------------------------------------------------------	
+//-------------------------------------------------------------------
 	//选项卡
 	run('ka');
 //-------------------------------------------------------------------------------
 	//放大镜
-	var left_box=document.getElementById("left_box");
-	var right_box=document.getElementById("right_box");
-	var bigpic=document.getElementById("bigpic");
-	var ospan=left_box.getElementsByTagName("span")[0];
-		hxsd_fd(left_box,right_box,bigpic,ospan)
-	
+    zoom('xl_pic','xl_big');
+    function change(){
+        var oDiv=document.getElementById('xl_pic');
+        var oMir=oDiv.getElementsByTagName('div')[0];
+        var oBig=document.getElementById('xl_big');
+        var oPic=oBig.getElementsByTagName('img')[0];
+        var aLi=document.getElementById('xl_banner').getElementsByTagName('ul')[0].getElementsByTagName('li');
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i+1;
+            aLi[i].onmouseover=function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].getElementsByTagName('img')[0].style.border=""
+                };
+                this.getElementsByTagName('img')[0].style.border="1px red solid";
+                oDiv.getElementsByTagName('img')[0].src=oPic.src='images/hxsd_x'+this.index+'.jpg';
+            };
+
+        };
+    };
+    change();
 //-------------------------------------------------------------------------------	
 //	数量加减
 	var kuang=document.getElementsByClassName("kuang")[0];
@@ -178,7 +190,6 @@ window.onload=function(){
     </div>
     </div>
 </div>
-
 <div class="main1">
 <div class="inner">
 	<dl class="muying clearfix">
@@ -192,36 +203,53 @@ window.onload=function(){
         <dd><span>></span></dd>
         <dd><a href="#">帮宝适纸尿裤</a></dd>
     </dl>
-    
-<div class="main1-bot">
+<div class="main1-bot" id="xl_max">
 	<div id="main_js" class="marin-left">
-    	<div class="box">
-            <ol>
-                <li class="ac"><img src="images/hxsd_x11.jpg"></li>
-                <li><img src="images/hxsd_x22.jpg"></li>
-                <li><img src="images/hxsd_x33.jpg"></li>
-                <li><img src="images/hxsd_x44.jpg"></li>
-                <li><img src="images/hxsd_x55.jpg"></li>
-            </ol>
-            
-            
-            <ul>
-                <li id="left_box"><img src="images/hxsd_x1.jpg"><span></span></li>
-                <li><img src="images/hxsd_x2.jpg"><span></span></li>
-                <li><img src="images/hxsd_x3.jpg"><span></span></li>
-                <li><img src="images/hxsd_x4.jpg"><span></span></li>
-                <li><img src="images/hxsd_x5.jpg"><span></span></li>
-            </ul>
-            
-            
-      <div id="right_box"><img id="bigpic" src="images/hxsd_x1.jpg"></div>
-      <!--<div><img src="images/hxsd_x2.jpg"></div>
-      <div><img src="images/hxsd_x3.jpg"></div>
-      <div><img src="images/hxsd_x4.jpg"></div>
-      <div><img src="images/hxsd_x5.jpg"></div>-->
-            
-            
-        </div>
+
+            <!--<ul>-->
+                <!--<li id="left_box"><img src="images/hxsd_x1.jpg"><span></span></li>-->
+                <!--<li><img src="images/hxsd_x2.jpg"><span></span></li>-->
+                <!--<li><img src="images/hxsd_x3.jpg"><span></span></li>-->
+                <!--<li><img src="images/hxsd_x4.jpg"><span></span></li>-->
+                <!--<li><img src="images/hxsd_x5.jpg"><span></span></li>-->
+            <!--</ul>-->
+            <!--<div id="right_box"><img id="bigpic" src="images/hxsd_x1.jpg"></div>-->
+            <!--<ol>-->
+                <!--<li class="ac"><img src="images/hxsd_x11.jpg"></li>-->
+                <!--<li><img src="images/hxsd_x22.jpg"></li>-->
+                <!--<li><img src="images/hxsd_x33.jpg"></li>-->
+                <!--<li><img src="images/hxsd_x44.jpg"></li>-->
+                <!--<li><img src="images/hxsd_x55.jpg"></li>-->
+            <!--</ol>-->
+            <!--<div><img src="images/hxsd_x2.jpg"></div>
+            <div><img src="images/hxsd_x3.jpg"></div>
+            <div><img src="images/hxsd_x4.jpg"></div>
+            <div><img src="images/hxsd_x5.jpg"></div>-->
+
+
+            <div id="xl_pic" class="xl_pic">
+                <img src="images/hxsd_x1.jpg" />
+                <div id="mir" class="mir"></div>
+            </div>
+            <div id="xl_big" class="xl_big">
+                <img src="images/hxsd_x1.jpg" />
+            </div>
+            <div id="xl_banner" class="xl_banner xl_banner_1">
+                <span class="leftBtn"><</span>
+                <span class="rightBtn">></span>
+                <!--<ol></ol>-->
+                <ul>
+                    <li><a href="javascript:;"><img src="images/hxsd_x11.jpg"/></a></li>
+                    <li><a href="javascript:;"><img src="images/hxsd_x22.jpg"/></a></li>
+                    <li><a href="javascript:;"><img src="images/hxsd_x33.jpg"/></a></li>
+                    <li><a href="javascript:;"><img src="images/hxsd_x44.jpg"/></a></li>
+                    <li><a href="javascript:;"><img src="images/hxsd_x55.jpg"/></a></li>
+                </ul>
+            </div>
+
+
+
+
         <div class="main1_txt"><span>商品编号：</span><span>695469</span><a href="#"><i><img src="images/hxsd_fenxaing_06.jpg"></i>关注商品</a><a href="#"><i><img src="images/hxsd_fenxaing_03.jpg"></i>分享</a>
     </div>
 </div>
@@ -293,7 +321,6 @@ window.onload=function(){
         
         
     </div>
-    
 	<div class="marin-right">
     	<div class="logo"><img src="images/hxsd_1111.jpg"></div>
     	<div class="dian">Pampers京东自营旗…<span>京东自营</span></div>
@@ -312,7 +339,6 @@ window.onload=function(){
 </div>
 </div>
 </div>
-
 <div class="main2">
 <div id="ka" class="inner">
 
@@ -356,15 +382,6 @@ window.onload=function(){
 
 </div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="footer">
 <div class="inner">
 	<div class="top clearfix">
@@ -431,8 +448,6 @@ window.onload=function(){
     </div>
 </div>
 </div>
-
-
 <div class="bottom">
 <div class="inner">
 	<div class="daohang">
